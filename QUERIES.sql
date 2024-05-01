@@ -165,7 +165,7 @@ FROM sales
 GROUP BY customer_type
 ORDER BY total_revenue;
 
--- Identify city with the largest tax/VAT percent
+-- Identify city with the largest tax percent
 SELECT
     city,
     ROUND(AVG(tax_pct), 2) AS avg_tax_pct
@@ -173,7 +173,7 @@ FROM sales
 GROUP BY city 
 ORDER BY avg_tax_pct DESC;
 
--- Determine which customer type pays the most in VAT
+-- Determine which customer type pays the most in tax
 SELECT
     customer_type,
     AVG(tax_pct) AS total_tax
